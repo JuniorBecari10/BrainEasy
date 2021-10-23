@@ -19,7 +19,7 @@ In the tests folder, has a Brainfuck interpreter and some sample files.
 
 ### Compiling
 
-<Compiler is not done.>
+Compiler is not done.
 
 ### Running
 
