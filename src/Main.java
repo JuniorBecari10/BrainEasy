@@ -1,8 +1,11 @@
 import java.io.*;
-import java.nio.Files;
+
+import java.nio.file.Files;
+import java.nio.charset.StandardCharsets;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     
@@ -16,10 +19,31 @@ public class Main {
         File src = new File(args[0]);
         File out = new File(args[1]);
         
-        List<String> lines = new ArrayList<String>();
-        
         try {
+            List<String> lines = Files.readAllLines(src.toPath(), StandardCharsets.UTF_8);
+            List<String> output = new ArrayList<String>();
             
+            int[] cells = new int[1000];
+            int pointer = 0;
+            
+            Arrays.fill(cells, 0);
+            
+            for (String s : lines) {
+                String line = "";
+                String[] split = s.split(" ", 1);
+                
+                ///
+                
+                switch (split[0]) {
+                    case "print":
+                        
+                    break;
+                }
+                
+                ///
+                
+                output.add(line);
+            }
         } catch (Exception e) {
             System.err.println("An problem occurred and the program has been terminated.");
         }
