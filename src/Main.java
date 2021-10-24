@@ -36,7 +36,12 @@ public class Main {
                 
                 switch (split[0]) {
                     case "print":
-                        
+                        if (split[1].startsWith("$")) { // é uma variável
+                            
+                        }
+                        else {
+                            
+                        }
                     break;
                 }
                 
