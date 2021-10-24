@@ -17,11 +17,7 @@ The output file (Compiled).
 
 In the tests folder, has a Brainfuck interpreter and some sample files.
 
-### Compiling
-
-Compiler is not done.
-
-### Running
+### Compiling the compiler
 
 #### Windows
 
@@ -31,3 +27,9 @@ Run the `compile_and_run.bat` file.
 
 Maybe changing the extension to `.sh` and running can work.
 (Not tested)
+
+### Running the generated file
+
+Go to **tests** folder and run the command:
+
+`python interpeter.py <file>`
