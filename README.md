@@ -23,6 +23,11 @@ Compiler is not done.
 
 ### Running
 
-Run this command:
+#### Windows
 
-`python interpreter.py <file>`
+Run the `compile_and_run.bat` file.
+
+#### Unix-Based Shells
+
+Maybe changing the extension to `.sh` and running can work.
+(Not tested)
