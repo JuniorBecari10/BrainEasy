@@ -37,12 +37,17 @@ public class Main {
                 
                 switch (split[0]) {
                     case "print":
+                        int counter = cells[pointer];
+                        
+                        while (counter > 0) {
+                            line += "-";
+                            counter--;
+                        }
+                        
                         if (split[1].startsWith("$")) { // é uma variável
                             
                         }
                         else {
-                            int counter = 0;
-                            
                             for (char c : split[1].toCharArray()) {
                                 int ascii = (int) c;
                                 
@@ -64,6 +69,8 @@ public class Main {
                                 System.out.println(counter);
                                 line += ".";
                             }
+                            
+                            cells[pointer] = counter;
                         }
                     break;
                 }
