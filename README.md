@@ -3,7 +3,7 @@
 ## About
 
 BrainEasy is a language that compiles to Brainfuck.
-Take 2 arguments: src and out.
+Take 2 arguments: **src** and **out**.
 
 **src**
 
@@ -23,7 +23,7 @@ In the tests folder, has a Brainfuck interpreter and some sample files.
 
 Run the `compile_and_run.bat` file.
 
-#### Unix-Based Shells
+#### Unix-Based Shells (Bash)
 
 Maybe changing the extension to `.sh` and running can work.
 (Not tested)
