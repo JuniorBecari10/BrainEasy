@@ -46,7 +46,7 @@ Go to **tests** folder and run the command:
 
 --------------------------
 
-##Commands
+## Commands
 
 > Note: You must use only one command per line!
 
