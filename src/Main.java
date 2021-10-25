@@ -82,6 +82,48 @@ public class Main {
                             cells[pointer] = counter;
                         }
                     break;
+                    
+                    case "set": // set <cell> <value>
+                        String[] spl = s.split(" ");
+                        String[] onlyArgs = Arrays.copyOfRange(spl, 1, spl.length);
+                        
+                        int cell = Integer.parseInt(onlyArgs[0]);
+                        int value = Integer.parseInt(onlyArgs[1]);
+                        
+                        while (pointer > cell) {
+                            line += "<";
+                            pointer--;
+                        }
+                            
+                        while (pointer < cell) {
+                            line += ">";
+                            pointer++;
+                        }
+                        
+                        /// Set Value
+                        
+                        counter = cells[pointer];
+                        
+                        while (counter > 0) {
+                            line += "-";
+                            counter--;
+                        }
+                                
+                        ///////////////////////////////
+                                
+                        while (counter < value) {
+                            line += "+";
+                            counter++;
+                        }
+                        
+                        while (counter < value) {
+                            line += "-";
+                            counter--;
+                        }
+                        
+                        System.out.println(counter);
+                        
+                    break;
                 }
                 
                 ///
