@@ -1,3 +1,5 @@
+# This source code is not more in use! The new is Main.java.
+
 import sys
 
 def compile(src, out):
