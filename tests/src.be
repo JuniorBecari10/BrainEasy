@@ -5,6 +5,7 @@ input 1
 input 2
 
 set 3 68
+moveptr left
 
 print $0
 print $1
