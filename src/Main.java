@@ -29,6 +29,8 @@ public class Main {
             Arrays.fill(cells, 0);
             
             for (String s : lines) {
+                if (s.length() == 0) continue;
+                
                 String line = "";
                 String[] split = s.split(" ");
                 split[1] = s.substring(s.indexOf(" ") + 1);
@@ -36,7 +38,7 @@ public class Main {
                 ///
                 
                 switch (split[0]) {
-                    case "print":
+                    case "print": // print <message> / <$cell>
                         int counter = cells[pointer];
                         
                         if (split[1].startsWith("$")) { // é uma variável
@@ -124,6 +126,23 @@ public class Main {
                         System.out.println(counter);
                         
                     break;
+                    
+                    case "input": // input <cell>
+                        cell = Integer.parseInt(split[1]);
+                        
+                        while (pointer > cell) {
+                            line += "<";
+                            pointer--;
+                        }
+                            
+                        while (pointer < cell) {
+                            line += ">";
+                            pointer++;
+                        }
+                        
+                        line += ",";
+                        
+                    break;
                 }
                 
                 ///
@@ -140,6 +159,8 @@ public class Main {
             }
         } catch (Exception e) {
             System.err.println("An problem occurred and the program has been terminated.");
+            //System.err.println("Message: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
