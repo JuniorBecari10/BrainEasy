@@ -77,7 +77,6 @@ public class Main {
                                     counter--;
                                 }
                                 
-                                System.out.println(counter);
                                 line += ".";
                             }
                             
@@ -85,12 +84,14 @@ public class Main {
                         }
                     break;
                     
-                    case "set": // set <cell> <value>/<$cell2>
+                    case "set": // set <cell> <value>
                         String[] spl = s.split(" ");
                         String[] onlyArgs = Arrays.copyOfRange(spl, 1, spl.length);
                         
+                        //boolean isSecondCell = spl[1].startsWith("$");
+                        
                         int cell = Integer.parseInt(onlyArgs[0]);
-                        int value = Integer.parseInt(onlyArgs[1]);
+                        int value = Integer.parseInt(/*!isSecondCell? onlyArgs[1].substring(1) : */ onlyArgs[1]);
                         
                         while (pointer > cell) {
                             line += "<";
@@ -113,6 +114,8 @@ public class Main {
                                 
                         ///////////////////////////////
                         
+                        //if (isSecondCell) value = cells[value];
+                        
                         while (counter < value) {
                             line += "+";
                             counter++;
@@ -122,8 +125,6 @@ public class Main {
                             line += "-";
                             counter--;
                         }
-                        
-                        System.out.println(counter);
                         
                     break;
                     
