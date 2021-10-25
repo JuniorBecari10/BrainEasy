@@ -30,7 +30,8 @@ public class Main {
             
             for (String s : lines) {
                 String line = "";
-                String[] split = s.split(" ", 1);
+                String[] split = s.split(" ");
+                split[1] = s.substring(s.indexOf(" ") + 1);
                 
                 ///
                 
@@ -40,7 +41,29 @@ public class Main {
                             
                         }
                         else {
+                            int counter = 0;
                             
+                            for (char c : split[1].toCharArray()) {
+                                int ascii = (int) c;
+                                
+                                while (counter > 0) {
+                                    line += "-";
+                                    counter--;
+                                }
+                                
+                                while (counter < ascii) {
+                                    line += "+";
+                                    counter++;
+                                }
+                                
+                                while (counter < ascii) {
+                                    line += "-";
+                                    counter--;
+                                }
+                                
+                                System.out.println(counter);
+                                line += ".";
+                            }
                         }
                     break;
                 }
@@ -48,6 +71,14 @@ public class Main {
                 ///
                 
                 output.add(line);
+            }
+            
+            try (BufferedWriter wr = new BufferedWriter(new FileWriter(out))) {
+                for (String s : output) {
+                    wr.write(s + "\n");
+                }
+                
+                wr.close();
             }
         } catch (Exception e) {
             System.err.println("An problem occurred and the program has been terminated.");
