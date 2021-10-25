@@ -39,13 +39,20 @@ public class Main {
                     case "print":
                         int counter = cells[pointer];
                         
-                        while (counter > 0) {
-                            line += "-";
-                            counter--;
-                        }
-                        
                         if (split[1].startsWith("$")) { // é uma variável
+                            int cell = Integer.parseInt(split[1].substring(1));
                             
+                            while (pointer > cell) {
+                                line += "<";
+                                pointer--;
+                            }
+                            
+                            while (pointer < cell) {
+                                line += ">";
+                                pointer++;
+                            }
+                            
+                            line += ".";
                         }
                         else {
                             for (char c : split[1].toCharArray()) {
@@ -55,6 +62,8 @@ public class Main {
                                     line += "-";
                                     counter--;
                                 }
+                                
+                                ///////////////////////////////
                                 
                                 while (counter < ascii) {
                                     line += "+";
