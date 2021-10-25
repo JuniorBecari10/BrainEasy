@@ -140,8 +140,18 @@ public class Main {
                             pointer++;
                         }
                         
-                        line += ",";
-                        
+                    break;
+                    
+                    case "moveptr": // moveptr <left> / <right>    tem que tomar cuidado com esse comando pq se colocar ele no meio de um processo ele interfere
+                        switch (split[1]) {
+                            case "left":
+                                line += "<";
+                            break;
+                            
+                            case "right":
+                                line += ">";
+                            break;
+                        }
                     break;
                 }
                 
