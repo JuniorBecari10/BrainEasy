@@ -85,7 +85,7 @@ public class Main {
                         }
                     break;
                     
-                    case "set": // set <cell> <value>
+                    case "set": // set <cell> <value>/<$cell2>
                         String[] spl = s.split(" ");
                         String[] onlyArgs = Arrays.copyOfRange(spl, 1, spl.length);
                         
@@ -112,7 +112,7 @@ public class Main {
                         }
                                 
                         ///////////////////////////////
-                                
+                        
                         while (counter < value) {
                             line += "+";
                             counter++;
@@ -159,6 +159,17 @@ public class Main {
                     break;
                     
                     case "setpointer": // setpointer <position>
+                        cell = Integer.parseInt(split[1]);
+                        
+                        while (pointer > 0) {
+                            line += "<";
+                            pointer--;
+                        }
+                        
+                        while (pointer < cell) {
+                            line += ">";
+                            pointer++;
+                        }
                         
                     break;
                 }

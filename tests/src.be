@@ -5,9 +5,10 @@ input 1
 input 2
 
 set 3 68
-moveptr left
 
 print $0
 print $1
 print $2
 print $3
+
+setpointer 10
