@@ -50,11 +50,11 @@ Go to **tests** folder and run the command:
 
 > Note: You must use only one command per line!
 
-**print** message / $cell
-**set** value cell
-**input** cell
-**moveptr** left / right
-**setpointer** position
+**print** message / $cell \n
+**set** value cell \n
+**input** cell \n
+**moveptr** left / right \n
+**setpointer** position \n
 
 ## Example
 
