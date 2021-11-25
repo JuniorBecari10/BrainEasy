@@ -1,4 +1,7 @@
-input 0
-set 1 70
+set 2 65
+set 3 100
 
-print $1
+print Definindo o Ponteiro para 2
+
+setpointer 2
+print $

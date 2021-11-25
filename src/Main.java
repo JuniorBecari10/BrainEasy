@@ -38,25 +38,37 @@ public class Main {
                 ///
                 
                 switch (split[0]) {
-                    case "print": // print <message> / <$cell>
+                    case "print": // print <message> / <$cell> / <$> (Local do ponteiro)
                         int counter = cells[pointer];
                         
                         if (split[1].startsWith("$")) { // é uma variável
-                            int cell = Integer.parseInt(split[1].substring(1));
-                            
-                            while (pointer > cell) {
-                                line += "<";
-                                pointer--;
-                            }
-                            
-                            while (pointer < cell) {
-                                line += ">";
-                                pointer++;
+                            if (split[1].length() != 1) {
+                                int cell = Integer.parseInt(split[1].substring(1));
+                                
+                                while (pointer > cell) {
+                                    line += "<";
+                                    pointer--;
+                                }
+                                
+                                while (pointer < cell) {
+                                    line += ">";
+                                    pointer++;
+                                }
                             }
                             
                             line += ".";
                         }
                         else {
+                            while (pointer > 0) {
+                                line += "<";
+                                pointer--;
+                            }
+                                
+                            while (pointer < 0) {
+                                line += ">";
+                                pointer++;
+                             }
+                            
                             for (char c : split[1].toCharArray()) {
                                 int ascii = (int) c;
                                 
