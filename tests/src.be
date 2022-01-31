@@ -1,7 +1,5 @@
-set 2 65
-set 3 100
+set 0 65
+set 1 32
+set 2 $1
 
-print Definindo o Ponteiro para 2
-
-setpointer 2
-print $
+print $2

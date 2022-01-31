@@ -13,11 +13,10 @@ The source file.
 
 The output file (Compiled).
 
-> Note: This language, for now, emulates only a part of Brainfuck functions. It doesn't emulate yet:
-> Loops,
-> Conditions,
-> Moving a value from one cell to another,
-> And more.
+> It doesn't emulate yet: <br> 
+> Loops, <br>
+> Conditions, <br>
+> And more. <br>
 
 **Maybe I can modify this project later.**
 

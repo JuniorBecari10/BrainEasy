@@ -1,5 +1,7 @@
 import sys
 
+print_char = True
+
 def interpret(code):
     cells = [0] * 1000
     ptr = 0
@@ -41,7 +43,10 @@ def interpret(code):
                 cells[ptr] = max_value
         
         elif c == '.':
-            print(chr(cells[ptr]), end="")
+            if (print_char):
+                print(chr(cells[ptr]), end="")
+            else:
+                print(cells[ptr], end=" ")
         
         elif c == ',':
             cells[ptr] = int(input("Requested Input: "))
@@ -69,5 +74,8 @@ def interpret(code):
         read = read + 1
 
 if __name__ == '__main__':
+    if (sys.argv[2] == "false"):
+        print_char = False
+    
     with open(sys.argv[1], 'r') as file:
         interpret(file.read())
