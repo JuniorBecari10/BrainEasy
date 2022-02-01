@@ -59,7 +59,7 @@ public class Main {
                             line += ".";
                         }
                         else {
-                            while (pointer > 0) {
+                            while (pointer > 0) { // a célula usada é o 0
                                 line += "<";
                                 pointer--;
                             }
@@ -79,17 +79,37 @@ public class Main {
                                 
                                 ///////////////////////////////
                                 
+                                while (counter < 0) {
+                                    line += "+";
+                                    counter++;
+                                }
+                                
+                                while (counter > 0) {
+                                    line += "-";
+                                    counter--;
+                                }
+                                
                                 while (counter < ascii) {
                                     line += "+";
                                     counter++;
                                 }
                                 
-                                while (counter < ascii) {
+                                while (counter > ascii) {
                                     line += "-";
                                     counter--;
                                 }
                                 
                                 line += ".";
+                                
+                                while (counter < 0) {
+                                    line += "+";
+                                    counter++;
+                                }
+                                
+                                while (counter > 0) {
+                                    line += "-";
+                                    counter--;
+                                }
                             }
                             
                             cells[pointer] = counter;
@@ -109,8 +129,6 @@ public class Main {
                             value = Integer.parseInt(onlyArgs[1]);
                         else
                             value = cells[Integer.parseInt(onlyArgs[1].substring(1))];
-                        
-                        System.out.println(cells[0]);
                         
                         while (pointer > cell) {
                             line += "<";
