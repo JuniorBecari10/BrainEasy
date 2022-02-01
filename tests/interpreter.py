@@ -74,7 +74,7 @@ def interpret(code):
         read = read + 1
 
 if __name__ == '__main__':
-    if (len(sys.argv) == 1 or sys.argv[2] == "false"):
+    if (sys.argv[2] == "false"):
         print_char = False
     
     with open(sys.argv[1], 'r') as file:

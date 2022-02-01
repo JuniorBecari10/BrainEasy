@@ -1,3 +1,3 @@
 @echo off
 
-python interpreter.py out.bf true
+python interpreter.py out.bf false

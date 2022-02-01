@@ -120,15 +120,15 @@ public class Main {
                         String[] spl = s.split(" ");
                         String[] onlyArgs = Arrays.copyOfRange(spl, 1, spl.length);
                         
-                        boolean isSecondCell = onlyArgs[1].startsWith("$");
+                        //boolean isSecondCell = onlyArgs[1].startsWith("$");
                         
                         int cell = Integer.parseInt(onlyArgs[0]);
                         int value = -1;
                         
-                        if (!isSecondCell)
-                            value = Integer.parseInt(onlyArgs[1]);
-                        else
-                            value = cells[Integer.parseInt(onlyArgs[1].substring(1))];
+                        //if (!isSecondCell)
+                        value = Integer.parseInt(onlyArgs[1]);
+                        //else
+                        //    value = cells[Integer.parseInt(onlyArgs[1].substring(1))];
                         
                         while (pointer > cell) {
                             line += "<";
