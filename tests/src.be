@@ -1,4 +1,4 @@
-set 1 10
-set 2 1
+set 0 10
+ope 1 -
 
-print $2
+print $0

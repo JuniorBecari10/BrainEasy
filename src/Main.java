@@ -116,7 +116,7 @@ public class Main {
                         }
                     break;
                     
-                    case "set": // set <cell> <value>/$<cell>
+                    case "set": // set <cell> <value>
                         String[] spl = s.split(" ");
                         String[] onlyArgs = Arrays.copyOfRange(spl, 1, spl.length);
                         
@@ -184,13 +184,15 @@ public class Main {
                         
                     break;
                     
-                    case "moveptr": // moveptr <left> / <right>
+                    case "moveptr": // moveptr <left> / <right> or < >
                         switch (split[1]) {
+                            case "<":
                             case "left":
                                 line += "<";
                                 pointer--;
                             break;
                             
+                            case ">":
                             case "right":
                                 line += ">";
                                 pointer++;
@@ -212,6 +214,28 @@ public class Main {
                         }
                         
                     break;
+                    
+                    case "ope": // ope cell +/-
+                        split = s.split(" ");
+                        
+                        cell = Integer.parseInt(split[1]);
+                        char op = split[2].charAt(0);
+                        
+                        while (pointer > cell) {
+                            line += "<";
+                            pointer--;
+                        }
+                            
+                        while (pointer < cell) {
+                            line += ">";
+                            pointer++;
+                        }
+                        
+                        if (op == '+')
+                            line += "+";
+                        else if (op == '-')
+                            line += "-";
+                    break;
                 }
                 
                 ///
@@ -227,7 +251,7 @@ public class Main {
                 wr.close();
             }
         } catch (Exception e) {
-            System.err.println("An problem occurred and the program has been terminated.");
+            System.err.println("An exception occurred:"); // "An problem occurred and the program has been terminated."
             //System.err.println("Message: " + e.getMessage());
             e.printStackTrace();
         }
