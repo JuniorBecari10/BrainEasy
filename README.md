@@ -45,7 +45,7 @@ Go to **tests** folder and run the command:
 The true/false argument is to tell the interpreter if it prints the char representaion of the cell or the
 value itself.
 
-**true** - prints the char representation of the cell's value
+**true** - prints the char representation of the cell's value <br>
 **false** - prints the number itself.
 
 ---
