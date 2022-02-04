@@ -13,14 +13,13 @@ The source file.
 
 The output file (Compiled).
 
-> It doesn't emulate yet: <br> 
+> **Things to do**: <br> 
 > Loops, <br>
 > Conditions, <br>
+> Mathemarical Operations <br>
 > And more. <br>
 
-**Maybe I can modify this project later.**
-
---------------------------
+---
 
 ## Testing
 
@@ -41,27 +40,37 @@ Maybe changing the extension to `.sh` and running can work.
 
 Go to **tests** folder and run the command:
 
-`python interpeter.py <file>`
+`python interpeter.py <file> <true/false>`
 
---------------------------
+The true/false argument is to tell the interpreter if it prints the char representaion of the cell or the
+value itself.
+
+**true** - prints the char representation of the cell's value
+**false** - prints the number itself.
+
+---
 
 ## Commands
 
 > Note: You must use only one command per line!
 
+'''
 **print** message / $cell
 **set** value cell
 **input** cell
 **moveptr** left / right
 **setpointer** position
+**ope** cell +/-
+**move** cellfrom cellto
+'''
 
-## Example
+## Examples
 
 **Hello World**
 
 `print Hello World`
 
----------------
+---
 
 **Printing an input value**
 
@@ -69,5 +78,19 @@ Go to **tests** folder and run the command:
 input 0
 print $0
 ```
+
+---
+
+**Basic Adder**
+
+'''
+input 0
+input 1
+
+move 0 2
+move 1 2
+
+print $2
+'''
 
 # Have fun! :)
