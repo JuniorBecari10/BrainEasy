@@ -23,10 +23,13 @@ public class Main {
             List<String> lines = Files.readAllLines(src.toPath(), StandardCharsets.UTF_8);
             List<String> output = new ArrayList<String>();
             
-            int[] cells = new int[1000];
+            byte[] cells = new byte[1000];
             int pointer = 0;
             
-            Arrays.fill(cells, 0);
+            //Arrays.fill(cells, 0);
+            
+            for (int i = 0; i < cells.length; i++)
+                cells[i] = 0;
             
             for (String s : lines) {
                 if (s.length() == 0) continue;
@@ -112,7 +115,7 @@ public class Main {
                                 }
                             }
                             
-                            cells[pointer] = counter;
+                            cells[pointer] = (byte) counter;
                         }
                     break;
                     
@@ -163,7 +166,7 @@ public class Main {
                             counter--;
                         }
                         
-                        cells[pointer] = counter;
+                        cells[pointer] = (byte) counter;
                         
                     break;
                     
@@ -270,6 +273,12 @@ public class Main {
                         // [>+<-]
                         
                         line += "[" + movers + "+" + backmovers + "-]";
+                    break;
+                    
+                    case "raw": // raw <raw bf code>
+                        split = s.split(" ");
+                        
+                        line += split[1];
                     break;
                 }
                 

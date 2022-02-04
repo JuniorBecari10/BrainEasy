@@ -3,10 +3,12 @@
 import sys
 
 print_char = True
+stdin = ""
 
 def interpret(code):
     cells = [0] * 1000
     ptr = 0
+    stdin_ptr = 0
     
     read = 0
     
@@ -48,10 +50,15 @@ def interpret(code):
             if (print_char):
                 print(chr(cells[ptr]), end="")
             else:
-                print(cells[ptr], end=" ")
+                print(cells[ptr], end="") # não coloca mais espaço
         
         elif c == ',':
-            cells[ptr] = int(input("Requested Input: "))
+            #cells[ptr] = int(input("Requested Input: "))
+            if stdin_ptr > len(stdin):
+                print("Exceeded.")
+            
+            cells[ptr] = int(stdin[stdin_ptr])
+            stdin_ptr = stdin_ptr + 1
         
         elif c == ']':
             if cells[ptr] != 0:
@@ -78,6 +85,8 @@ def interpret(code):
 if __name__ == '__main__':
     if (sys.argv[2] == "false"):
         print_char = False
+    
+    stdin = input("Insert Input: ")
     
     with open(sys.argv[1], 'r') as file:
         interpret(file.read())
