@@ -1,4 +1,7 @@
-set 0 10
-ope 1 -
+input 0
+input 1
 
-print $0
+move 0 2
+move 1 2
+
+print $2

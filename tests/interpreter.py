@@ -1,3 +1,5 @@
+# Brainfuck Interpreter made in Python by JuniorBecari10 for the development of the BrainEasy language.
+
 import sys
 
 print_char = True

@@ -236,6 +236,41 @@ public class Main {
                         else if (op == '-')
                             line += "-";
                     break;
+                    
+                    case "move": // move cellfrom cellto
+                        split = s.split(" ");
+                        
+                        int cellfrom = Integer.parseInt(split[1]);
+                        int cellto = Integer.parseInt(split[2]);
+                        
+                        if (cellfrom > cellto)
+                            throw new Exception("The cellfrom cannot be bigger than cellto!");
+                        
+                        while (pointer > cellfrom) {
+                            line += "<";
+                            pointer--;
+                        }
+                            
+                        while (pointer < cellfrom) {
+                            line += ">";
+                            pointer++;
+                        }
+                        
+                        int ptr = pointer;
+                        String movers = "";
+                        String backmovers = "";
+                        
+                        while (ptr < cellto) {
+                            movers += ">";
+                            ptr++;
+                        }
+                        
+                        backmovers = movers.replace('>', '<');
+                        
+                        // [>+<-]
+                        
+                        line += "[" + movers + "+" + backmovers + "-]";
+                    break;
                 }
                 
                 ///
