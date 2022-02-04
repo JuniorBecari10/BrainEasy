@@ -55,13 +55,13 @@ value itself.
 > Note: You must use only one command per line!
 
 ```
-**print** message / $cell
-**set** value cell
-**input** cell
-**moveptr** left / right
-**setpointer** position
-**ope** cell +/-
-**move** cellfrom cellto
+print message / $cell
+set value cell
+input cell
+moveptr left / right
+setpointer position
+ope cell +/-
+move cellfrom cellto
 ```
 
 ## Examples
