@@ -54,7 +54,7 @@ value itself.
 
 > Note: You must use only one command per line!
 
-'''
+```
 **print** message / $cell
 **set** value cell
 **input** cell
@@ -62,7 +62,7 @@ value itself.
 **setpointer** position
 **ope** cell +/-
 **move** cellfrom cellto
-'''
+```
 
 ## Examples
 
@@ -83,7 +83,7 @@ print $0
 
 **Basic Adder**
 
-'''
+```
 input 0
 input 1
 
@@ -91,6 +91,6 @@ move 0 2
 move 1 2
 
 print $2
-'''
+```
 
 # Have fun! :)
