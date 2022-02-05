@@ -218,26 +218,34 @@ public class Main {
                         
                     break;
                     
-                    case "ope": // ope cell +/-
+                    case "ope": // ope cell +/- | modificar ela e fazer direito uma operação matemática, tipo assim: ope cell1 cell2 cellout ope[+ - * /] (por enquanto é +/-)
                         split = s.split(" ");
                         
-                        cell = Integer.parseInt(split[1]);
+                        int cell1 = Integer.parseInt(split[1]);
+                        int cell2 = Integer.parseInt(split[2]);
+                        int cellout = Integer.parseInt(split[3]);
+                        
                         char op = split[2].charAt(0);
                         
-                        while (pointer > cell) {
+                        while (pointer > cell1) {
                             line += "<";
                             pointer--;
                         }
                             
-                        while (pointer < cell) {
+                        while (pointer < cell1) {
                             line += ">";
                             pointer++;
                         }
                         
-                        if (op == '+')
-                            line += "+";
-                        else if (op == '-')
+                        if (op == '+') {
+                            //line += "+";
+                            
+                            
+                        }
+                        else if (op == '-') {
                             line += "-";
+                        }
+                        
                     break;
                     
                     case "move": // move cellfrom cellto
@@ -246,8 +254,8 @@ public class Main {
                         int cellfrom = Integer.parseInt(split[1]);
                         int cellto = Integer.parseInt(split[2]);
                         
-                        if (cellfrom > cellto)
-                            throw new Exception("The cellfrom cannot be bigger than cellto!");
+                        //if (cellfrom > cellto)
+                        //    throw new Exception("The cellfrom cannot be bigger than cellto!");
                         
                         while (pointer > cellfrom) {
                             line += "<";
@@ -263,14 +271,23 @@ public class Main {
                         String movers = "";
                         String backmovers = "";
                         
-                        while (ptr < cellto) {
-                            movers += ">";
-                            ptr++;
+                        if (cellfrom < cellto) {
+                            while (ptr < cellto) {
+                                movers += ">";
+                                ptr++;
+                            }
+                        }
+                        else {
+                            while (ptr > cellto) {
+                                movers += "<";
+                                ptr--;
+                            }
                         }
                         
-                        backmovers = movers.replace('>', '<');
-                        
-                        // [>+<-]
+                        if (cellfrom < cellto)
+                            backmovers = movers.replace('>', '<');
+                        else
+                            backmovers = movers.replace('<', '>');
                         
                         line += "[" + movers + "+" + backmovers + "-]";
                     break;
