@@ -290,7 +290,7 @@ public class Main {
                             String movers = "";
                             String backmovers = "";
                             
-                            if (cell2 < cell1) {
+                            if (cell1 < cell2) {
                                 while (ptr < cell1) {
                                     movers += ">";
                                     ptr++;
