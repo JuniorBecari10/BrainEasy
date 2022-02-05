@@ -218,14 +218,13 @@ public class Main {
                         
                     break;
                     
-                    case "ope": // ope cell +/- | modificar ela e fazer direito uma operação matemática, tipo assim: ope cell1 cell2 cellout ope[+ - * /] (por enquanto é +/-)
+                    case "ope": // ope cell1 cell2/out ope[+ - * /] (por enquanto é +/-)
                         split = s.split(" ");
                         
                         int cell1 = Integer.parseInt(split[1]);
                         int cell2 = Integer.parseInt(split[2]);
-                        int cellout = Integer.parseInt(split[3]);
                         
-                        char op = split[2].charAt(0);
+                        char op = split[3].charAt(0);
                         
                         while (pointer > cell1) {
                             line += "<";
@@ -240,12 +239,77 @@ public class Main {
                         if (op == '+') {
                             //line += "+";
                             
+                            while (pointer > cell1) {
+                                line += "<";
+                                pointer--;
+                            }
+                                
+                            while (pointer < cell1) {
+                                line += ">";
+                                pointer++;
+                            }
                             
+                            int ptr = pointer;
+                            String movers = "";
+                            String backmovers = "";
+                            
+                            if (cell1 < cell2) {
+                                while (ptr < cell2) {
+                                    movers += ">";
+                                    ptr++;
+                                }
+                            }
+                            else {
+                                while (ptr > cell2) {
+                                    movers += "<";
+                                    ptr--;
+                                }
+                            }
+                            
+                            if (cell1 < cell2)
+                                backmovers = movers.replace('>', '<');
+                            else
+                                backmovers = movers.replace('<', '>');
+                            
+                            line += "[" + movers + "+" + backmovers + "-]";
                         }
                         else if (op == '-') {
-                            line += "-";
+                           //line += "-";
+                           
+                           while (pointer > cell1) {
+                                line += "<";
+                                pointer--;
+                            }
+                                
+                            while (pointer < cell1) {
+                                line += ">";
+                                pointer++;
+                            }
+                            
+                            int ptr = pointer;
+                            String movers = "";
+                            String backmovers = "";
+                            
+                            if (cell1 < cell2) {
+                                while (ptr < cell2) {
+                                    movers += ">";
+                                    ptr++;
+                                }
+                            }
+                            else {
+                                while (ptr > cell2) {
+                                    movers += "<";
+                                    ptr--;
+                                }
+                            }
+                            
+                            if (cell1 < cell2)
+                                backmovers = movers.replace('>', '<');
+                            else
+                                backmovers = movers.replace('<', '>');
+                            
+                            line += "[" + movers + "-" + backmovers + "-]";
                         }
-                        
                     break;
                     
                     case "move": // move cellfrom cellto
