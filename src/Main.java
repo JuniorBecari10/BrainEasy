@@ -291,13 +291,13 @@ public class Main {
                             String backmovers = "";
                             
                             if (cell1 < cell2) {
-                                while (ptr < cell1) {
+                                while (ptr < cell2) {
                                     movers += ">";
                                     ptr++;
                                 }
                             }
                             else {
-                                while (ptr > cell1) {
+                                while (ptr > cell2) {
                                     movers += "<";
                                     ptr--;
                                 }
